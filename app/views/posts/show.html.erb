@@ -3,6 +3,12 @@
 
 <%= @post.title %>
 
-<%= @post.comments.each do |comment| %>
+<%= @post.content %>
+
+<% @post.categories.each do |cat| %>
+  <%= cat.name %>
+<% end %>
+
+<% @post.comments.each do |comment| %>
   <%= comment.content %>
 <% end %>
