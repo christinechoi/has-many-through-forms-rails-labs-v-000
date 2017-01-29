@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
+    @user = User.find_or_create_by(params[:user])
+
+    @comment = Comment.find_or_create_by(params[:content])
+    #binding.pry
   end
 
   def index
